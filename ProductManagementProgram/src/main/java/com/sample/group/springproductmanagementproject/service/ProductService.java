@@ -1,9 +1,7 @@
 package com.sample.group.springproductmanagementproject.service;
 
-//import com.sample.group.springtutorialproject.domain.ObjectRepo;
 import com.sample.group.springproductmanagementproject.domain.Product;
 import com.sample.group.springproductmanagementproject.domain.ProductRepo;
-//import com.sample.group.springtutorialproject.domain.SampleObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

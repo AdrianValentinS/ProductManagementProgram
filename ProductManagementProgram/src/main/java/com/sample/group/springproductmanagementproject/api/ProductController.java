@@ -2,10 +2,8 @@ package com.sample.group.springproductmanagementproject.api;
 
 import com.sample.group.springproductmanagementproject.converter.ProductStockConverter;
 import com.sample.group.springproductmanagementproject.domain.Product;
-//import com.sample.group.springtutorialproject.domain.SampleObject;
 import com.sample.group.springproductmanagementproject.dto.ProductStockDto;
 import com.sample.group.springproductmanagementproject.service.ProductService;
-//import com.sample.group.springtutorialproject.service.SampleObjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

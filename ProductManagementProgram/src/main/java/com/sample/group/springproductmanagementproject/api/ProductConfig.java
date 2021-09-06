@@ -1,9 +1,7 @@
 package com.sample.group.springproductmanagementproject.api;
 
-//import com.sample.group.springtutorialproject.domain.ObjectRepo;
 import com.sample.group.springproductmanagementproject.domain.Product;
 import com.sample.group.springproductmanagementproject.domain.ProductRepo;
-//import com.sample.group.springtutorialproject.domain.SampleObject;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
