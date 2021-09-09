@@ -8,15 +8,30 @@
         <version>2.5.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.sample.group</groupId>
-    <artifactId>SpringTutorialProject</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>SpringTutorialProject</name>
-    <description>Demo project for Spring Boot</description>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-maven-plugin</artifactId>
+    <version>${project.parent.version}</version>
+    <name>ProductManagementProgram</name>
+    <description>Final course completion project</description>
     <properties>
         <java.version>16</java.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+            <version>2.4.1</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>1.0.0.GA</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>4.0.2.GA</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>

@@ -3,6 +3,7 @@ package com.sample.group.springproductmanagementproject.domain;
 import lombok.*;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Getter
 @Setter
@@ -21,16 +22,18 @@ public class Product {
     private Long productID;
 
     @Column
+    private String productName;
+
+    @Column
     private String productDescription;
 
     @Column
-    private int productPricePerUnit;
+    private BigDecimal productPricePerUnit;
 
     @Column
     private String productCategory;
 
     @Column
     private Long productQuantity;
-
 
 }
