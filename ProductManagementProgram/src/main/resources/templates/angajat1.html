@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Angajati depozit</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" href="/bootstrap.min.css" media="screen"/>
+</head>
+<body>
+<div class="container">
+    <div class="page-header" id="banner">
+        <div class="row">
+            <div class="col-lg-8 col-md-7 col-sm-6">
+                <h1>Angajat</h1>
+
+                <form class="form-horizontal" th:action="@{/employee/{id}/roles(id=${employee.id})}" method="post" enctype="multipart/form-data" >
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Nume</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" disabled="disabled"
+                                       th:value="${employee.firstName + ' ' + employee.lastName}"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Email</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" disabled="disabled"
+                                       th:value="${employee.email}"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Responsabilitati/atributii angajat</label>
+                            <div class="col-lg-10">
+                                <div th:each="atribut : ${employee.roles}">
+                                    <span th:text="${role.name}" /> - <span th:text="${role.description}" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-6 col-lg-offset-2">
+                                <div class="input-group">
+                                    <select name="atributId" class="form-control">
+                                        <option th:each="atribut : ${role}"
+                                                th:value="${roles.id}"
+                                                th:text="${roles.description}">Cautare atributii</option>
+                                    </select>
+                                    <span class="input-group-btn">
+									<button type="submit" class="btn btn-default">Ok</button>
+								</span>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
