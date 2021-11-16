@@ -8,10 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.math.BigDecimal;
-import java.util.ArrayList;
+import javax.validation.constraints.NotBlank;
 import java.util.List;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -53,6 +51,12 @@ public class ProductServiceImplementation implements ProductServiceInterface{
     @Override
     public List<ProductDto> searchByID(Long productID) {
         return productRepo.findAllByProductID(productID).stream().map(productConverter::entityToDto).collect(Collectors.toList());
+    }
+
+    @Override
+    public ProductDto searchByIDSingleEntity(@NotBlank Long productID){
+        final Product product = productRepo.findById(productID).orElseThrow(() -> new RuntimeException("Not found"));
+        return new ProductDto(product.getProductID(), product.getProductName(), product.getProductDescription(), product.getProductPricePerUnit(), product.getProductCategory(), product.getProductQuantity());
     }
 
     @Override

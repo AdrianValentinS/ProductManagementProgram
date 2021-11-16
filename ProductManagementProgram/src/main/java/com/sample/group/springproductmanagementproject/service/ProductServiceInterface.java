@@ -1,9 +1,7 @@
 package com.sample.group.springproductmanagementproject.service;
 
-import com.sample.group.springproductmanagementproject.domain.Product;
-import com.sample.group.springproductmanagementproject.dto.ProductDto;
 import org.springframework.transaction.annotation.Transactional;
-
+import com.sample.group.springproductmanagementproject.dto.ProductDto;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -23,8 +21,11 @@ public interface ProductServiceInterface {
     @Transactional(readOnly = true)
     List<ProductDto> searchByID(@NotBlank Long productID);
 
+    @Transactional(readOnly = true)
+    ProductDto searchByIDSingleEntity(@NotBlank Long productID);
+
     @Transactional(rollbackFor = Exception.class)
-    void updateProduct(@NotNull Long productID, @NotNull @Valid ProductDto dto);
+    void updateProduct(@NotNull Long productID, @NotNull @Valid ProductDto dto); // from return void to return object, might cause issues
 
     @Transactional(rollbackFor = Exception.class)
     void deleteProduct(@NotNull Long productID);

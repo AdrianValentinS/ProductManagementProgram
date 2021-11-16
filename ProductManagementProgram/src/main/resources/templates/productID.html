@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update product page</title>
+    <style> body {
+        background: #ffffff;
+    }
+    .container{
+        max-width: 5000px;
+        margin: auto;
+        background: white;
+        padding: 10px;
+    }
+    </style>
+</head>
+<body>
+<nav>
+    <table border="5" cellpadding="1" bgcolor="#fff">
+        <th>
+            <a href="/api/main/addProduct">Add a New Product</a>
+        </th>
+        <th>
+            <a href="/api/main/search/display">View Products</a>
+        </th>
+        <th>
+            <a href="/api/main/search/id/">Search Products By ID</a>
+        </th>
+        <th>
+            <a href="/api/main/search/name/">Search Products By Name</a>
+        </th>
+        <th>
+            <a href="/api/security/login">Log Out</a>
+        </th>
+    </table>
+</nav>
+<h3>Products List</h3>
+<table border="1" cellpadding="2" cellspacing="2">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Quantity</th>
+    </tr>
+    <tbody>
+    <tr th:each="product : ${productID}">
+        <td th:text="${product.productID}"></td>
+        <td th:text="${product.productName}"></td>
+        <td th:text="${product.productDescription}"></td>
+        <td th:text="${product.productPrice}"></td>
+        <td th:text="${product.productCategory}"></td>
+        <td th:text="${product.productQuantity}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
